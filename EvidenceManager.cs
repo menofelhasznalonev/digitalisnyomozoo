@@ -8,6 +8,10 @@ namespace digitalisnyomozoo
 {
 	internal class EvidenceManager
 	{
-
+		static void BizonyitekHozzaadasa(Evidence bizonyitek)
+		{
+			Console.Write("Bizonyíték típusa: ")
+			Console.Read
+		}
 	}
 }
