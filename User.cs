@@ -18,5 +18,21 @@ namespace digitalisnyomozoo
 			this.id = id;
 			this.szerepkor = szerepkor;
 		}
+
+		public string Nev { get => nev; set => nev = value; }
+		public int Id 
+		{
+			get
+			{
+				return id;
+			}
+		}
+		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
+
+
+		public override string ToString()
+		{
+			return $"{this.Nev} {this.id} {this.szerepkor}";
+		}
 	}
 }

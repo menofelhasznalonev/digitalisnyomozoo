@@ -20,5 +20,10 @@ namespace digitalisnyomozoo
 			this.leiras = leiras;
 			this.megbizhatosagiErtek = megbizhatosagiErtek;
 		}
+
+		public int Id { get => id; set => id = value; }
+		public string Tipus { get => tipus; set => tipus = value; }
+		public string Leiras { get => leiras; set => leiras = value; }
+		public int MegbizhatosagiErtek { get => megbizhatosagiErtek; set => megbizhatosagiErtek = value; }
 	}
 }

@@ -18,5 +18,9 @@ namespace digitalisnyomozoo
 			this.feladata = feladata;
 			this.allapotvaltozasokKezelese = allapotvaltozasokKezelese;
 		}
+
+		public string AktualisStatus { get => aktualisStatus; set => aktualisStatus = value; }
+		public string Feladata { get => feladata; set => feladata = value; }
+		public string AllapotvaltozasokKezelese { get => allapotvaltozasokKezelese; set => allapotvaltozasokKezelese = value; }
 	}
 }

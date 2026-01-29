@@ -18,5 +18,9 @@ namespace digitalisnyomozoo
 			this.vallomas = vallomas;
 			this.vallomasDatuma = vallomasDatuma;
 		}
+
+		public string Vallomas { get => vallomas; set => vallomas = value; }
+		public DateTime VallomasDatuma { get => vallomasDatuma; set => vallomasDatuma = value; }
+		internal Person Szemely { get => szemely; set => szemely = value; }
 	}
 }

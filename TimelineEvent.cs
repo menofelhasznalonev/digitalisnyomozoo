@@ -16,5 +16,8 @@ namespace digitalisnyomozoo
 			this.datum = datum;
 			this.esemenyLeirasa = esemenyLeirasa;
 		}
+
+		public DateTime Datum { get => datum; set => datum = value; }
+		public string EsemenyLeirasa { get => esemenyLeirasa; set => esemenyLeirasa = value; }
 	}
 }

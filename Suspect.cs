@@ -18,5 +18,9 @@ namespace digitalisnyomozoo
 			this.gyanusitottsagiSzint = gyanusitottsagiSzint;
 			this.statusz = statusz;
 		}
+
+		public int GyanusitottsagiSzint { get => gyanusitottsagiSzint; set => gyanusitottsagiSzint = value; }
+		public string Statusz { get => statusz; set => statusz = value; }
+		internal Person Szemely { get => szemely; set => szemely = value; }
 	}
 }

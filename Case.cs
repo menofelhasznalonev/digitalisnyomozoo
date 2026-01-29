@@ -25,12 +25,22 @@ namespace digitalisnyomozoo
 			this.szemely = szemely;
 			this.bizonyitek = bizonyitek;
 		}
-		
 
+		public int Id {
+			get 
+			{ 
+				return id;
+			}
 
-
-
-
-
+			set
+			{
+				this.id = value;
+			}
+		}
+		public string Cim { get => cim; set => cim = value; }
+		public string Leiras { get => leiras; set => leiras = value; }
+		public string Allapot { get => allapot; set => allapot = value; }
+		internal Person Szemely { get => szemely; set => szemely = value; }
+		internal Evidence Bizonyitek { get => bizonyitek; set => bizonyitek = value; }
 	}
 }
