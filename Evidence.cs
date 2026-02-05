@@ -27,6 +27,10 @@ namespace digitalisnyomozoo
 		public int MegbizhatosagiErtek { get => megbizhatosagiErtek; set => megbizhatosagiErtek = value; }
 
 
+		public override string ToString()
+		{
+			return $"ID: {this.id} | Típus: {this.tipus} | Leírás: {this.leiras} | Megbízhatósági érték: {this.megbizhatosagiErtek}";
+		}
 	}
 
 

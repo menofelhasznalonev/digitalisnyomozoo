@@ -11,6 +11,7 @@
             {
                 em.BizonyitekHozzaadasa(id);
 				id += 1;
+                em.BizonyitekTorlese();
 			} while (id < 10);
 			
         }
