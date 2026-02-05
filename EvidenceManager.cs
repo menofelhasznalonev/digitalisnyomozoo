@@ -71,7 +71,13 @@ namespace digitalisnyomozoo
 			
 		}
 
-
+		public void Listazas()
+		{
+			for (int i = 1; i <= lista.Count; i++)
+			{
+				Console.WriteLine($"{i}: {lista[i - 1]}");
+			}
+		}
 
 
 	}
