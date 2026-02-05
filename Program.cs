@@ -10,6 +10,7 @@
 			Console.WriteLine( u1.Id);
             u1.Nev = "jkl";
 			Console.WriteLine(u1);
+            //teszt
         }
     }
 }
