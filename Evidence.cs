@@ -25,5 +25,9 @@ namespace digitalisnyomozoo
 		public string Tipus { get => tipus; set => tipus = value; }
 		public string Leiras { get => leiras; set => leiras = value; }
 		public int MegbizhatosagiErtek { get => megbizhatosagiErtek; set => megbizhatosagiErtek = value; }
+
+
 	}
+
+
 }
