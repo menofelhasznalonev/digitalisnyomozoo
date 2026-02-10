@@ -11,14 +11,15 @@ namespace digitalisnyomozoo
 	{
 
 		private List<Evidence> lista;
+		private int idSzamlalo = 0;
 
 		public EvidenceManager()
 		{
 			lista = new List<Evidence>();
 		}
 
-
-		public void BizonyitekHozzaadasa(int id)
+		
+		public void BizonyitekHozzaadasa()
 		{
 
 			Console.Write("Bizonyíték típusa: ");
@@ -41,15 +42,17 @@ namespace digitalisnyomozoo
 			
 			
 
-			Evidence bizonyitek = new Evidence(id, tipus, leiras, megbizhatosagiErtek);
-
+			Evidence bizonyitek = new Evidence(idSzamlalo, tipus, leiras, megbizhatosagiErtek);
+			idSzamlalo++;
 			lista.Add(bizonyitek);
-		}
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
 
 		public void BizonyitekTorlese()
 		{
 			for (int i = 1; i <= lista.Count; i++) 
 			{
+                Console.WriteLine();
 				Console.WriteLine($"{i}: {lista[i-1]}");
 			}
 			Console.Write("Hanyadik elemet szeretné törölni: ");
@@ -68,15 +71,38 @@ namespace digitalisnyomozoo
 			{
 				Console.WriteLine("Rossz adat megadva");
 			}
-			
-		}
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
 
 		public void Listazas()
 		{
 			for (int i = 1; i <= lista.Count; i++)
 			{
+                Console.WriteLine();
 				Console.WriteLine($"{i}: {lista[i - 1]}");
 			}
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
+
+		public void Kivalaszto()
+		{
+            Console.WriteLine("Milyen műveletet szeretne végrehajtani?");
+			string valasztas = "";
+			do
+			{
+				Console.Write("Bizonyíték hozzáadása (H) | Bizonyíték törlése (T) | Bizonyítékok listázása (L) | Vissza (V) | ");
+				valasztas = Console.ReadLine().ToUpper();
+			} while (valasztas != "H" && valasztas != "T" && valasztas != "L" && valasztas != "V");
+
+			switch (valasztas)
+			{
+				case "H": BizonyitekHozzaadasa();break;
+                case "T": BizonyitekTorlese();break;
+                case "L": Listazas();break;
+				default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
+            }
+
+
 		}
 
 

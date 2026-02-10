@@ -4,16 +4,15 @@
     {
         static void Main(string[] args)
         {
-            int id = 0;
             EvidenceManager em = new EvidenceManager();
+
+            em.Kivalaszto();
 
             do
             {
-                em.BizonyitekHozzaadasa(id);
-				id += 1;
-                em.BizonyitekTorlese();
-			} while (id < 10);
-			//test
+                em.Kivalaszto();
+			} while (true);
+			
         }
     }
 }
