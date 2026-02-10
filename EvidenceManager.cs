@@ -13,9 +13,11 @@ namespace digitalisnyomozoo
 		private List<Evidence> lista;
 		private int idSzamlalo = 0;
 
-		public EvidenceManager()
+        internal List<Evidence> Lista { get => lista; set => lista = value; }
+
+        public EvidenceManager()
 		{
-			lista = new List<Evidence>();
+			Lista = new List<Evidence>();
 		}
 
 		
@@ -44,24 +46,31 @@ namespace digitalisnyomozoo
 
 			Evidence bizonyitek = new Evidence(idSzamlalo, tipus, leiras, megbizhatosagiErtek);
 			idSzamlalo++;
-			lista.Add(bizonyitek);
+			Lista.Add(bizonyitek);
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
 
-		public void BizonyitekTorlese()
-		{
-			for (int i = 1; i <= lista.Count; i++) 
-			{
+        public void Listazas()
+        {
+            for (int i = 1; i <= Lista.Count; i++)
+            {
                 Console.WriteLine();
-				Console.WriteLine($"{i}: {lista[i-1]}");
-			}
-			Console.Write("Hanyadik elemet szeretné törölni: ");
+                Console.WriteLine($"{i}: {Lista[i - 1]}");
+            }
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
+
+        public void BizonyitekTorlese()
+		{
+
+			Listazas();
+            Console.Write("Hanyadik elemet szeretné törölni: ");
 			if (int.TryParse(Console.ReadLine(), out int hanyadik))
 			{
-				if(hanyadik <= lista.Count && hanyadik > 0)
+				if(hanyadik <= Lista.Count && hanyadik > 0)
 				{
 					Console.WriteLine($"{hanyadik}. elem törölve.");
-					lista.RemoveAt(hanyadik-1);
+					Lista.RemoveAt(hanyadik-1);
 				} else
 				{
 					Console.WriteLine("Nem létező adat");
@@ -74,15 +83,7 @@ namespace digitalisnyomozoo
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
 
-		public void Listazas()
-		{
-			for (int i = 1; i <= lista.Count; i++)
-			{
-                Console.WriteLine();
-				Console.WriteLine($"{i}: {lista[i - 1]}");
-			}
-            Console.WriteLine("----------------------------------------------------------------------------------------------------");
-        }
+
 
 		public void Kivalaszto()
 		{

@@ -6,7 +6,6 @@
         {
             EvidenceManager em = new EvidenceManager();
 
-            em.Kivalaszto();
 
             do
             {
