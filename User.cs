@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,16 +34,26 @@ namespace digitalisnyomozoo
 		}
 		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
 
-        public void Feltoltes()
+        public void EmberGeneralas()
         {
             Random r = new Random();
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Person ember = new Person($"{vNev[r.Next(0, 10)]} {kNev[r.Next(0, 10)]}", r.Next(18, 81), "Még nincs megjegyzés");
                 emberekLista.Add(ember);
             }
 
+        }
+
+		public void EmberListazas()
+		{
+            for (int i = 1; i <= emberekLista.Count; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{i}: {emberekLista[i - 1]}");
+            }
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
     }
 }

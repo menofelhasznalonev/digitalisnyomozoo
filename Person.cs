@@ -25,7 +25,9 @@ namespace digitalisnyomozoo
 		public int Eletkor { get => eletkor; set => eletkor = value; }
 		public string Megjegyzes { get => megjegyzes; set => megjegyzes = value; }
 
-
-
+        public override string ToString()
+        {
+            return $"Név: {this.nev} | Életkor: {this.eletkor} | Megjegyzés: {this.megjegyzes}";
+        }
     }
 }

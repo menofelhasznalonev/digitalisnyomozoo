@@ -17,8 +17,9 @@ namespace digitalisnyomozoo
         }
 
 
-        EvidenceManager em = new EvidenceManager();
-        public void UgyHozzaadasa()
+
+        
+        public void UgyHozzaadasa(User felhasznalo, EvidenceManager em)
         {
 
             Console.Write("Ügy címe: ");
@@ -31,11 +32,22 @@ namespace digitalisnyomozoo
             string allapot = Console.ReadLine();
 
 
-
-            
-
             int hanyadik = 0;
             bool mehet = false;
+            felhasznalo.EmberListazas();
+            do
+            {
+                Console.Write("Hanyadik embert csatolja az ügyhöz: ");
+                if (int.TryParse(Console.ReadLine(), out hanyadik))
+                {
+                    mehet = true;
+                }
+            } while (!mehet || hanyadik <= 0 || hanyadik > felhasznalo.emberekLista.Count);
+            Person ember = felhasznalo.emberekLista[hanyadik-1];
+
+
+            hanyadik = 0;
+            mehet = false;
             em.Listazas();
             do
             {
@@ -44,16 +56,16 @@ namespace digitalisnyomozoo
                 {
                     mehet = true;
                 }
-            } while (!mehet || hanyadik <= 0 || hanyadik >= em.Lista.Count-1);
-            Evidence bizonyitek = em.Lista[hanyadik];
+            } while (!mehet || hanyadik <= 0 || hanyadik > em.Lista.Count);
+            Evidence bizonyitek = em.Lista[hanyadik-1];
 
 
 
 
-            //Case ugy = new Case(cim, leiras, allapot, bizonyitek, );
-            //idSzamlalo++;
-            //lista.Add(ugy);
-            //Console.WriteLine("----------------------------------------------------------------------------------------------------");
+            Case ugy = new Case(idSzamlalo, cim, leiras, allapot, ember, bizonyitek);
+            idSzamlalo++;
+            lista.Add(ugy);
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
     }
 }
