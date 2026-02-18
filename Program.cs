@@ -2,6 +2,30 @@
 {
     internal class Program
     {
+
+        static void Menu(EvidenceManager em, CaseManager cm, User felhasznalo)
+        {
+            Console.WriteLine("A programban található emberek csak kitalációk, bármi egyezés a valósággal a véletlen műve.");
+            do
+            {
+                Console.WriteLine("Milyen adatokat szeretne módosítani, törölni, vagy listázni?");
+                string valasztas = "";
+                do
+                {
+                    Console.Write("Bizonyítékok (B) | Ügyek (U) | Vissza (V) | ");
+                    valasztas = Console.ReadLine().ToUpper();
+                } while (valasztas != "B" && valasztas != "U" && valasztas != "L" && valasztas != "V");
+
+                switch (valasztas)
+                {
+                    case "B": em.Kivalaszto(); break;
+                    case "U": cm.Kivalaszto(felhasznalo, em); break;
+
+                    default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
+                }
+            } while (true);
+        }
+
         static void Main(string[] args)
         {
             
@@ -11,13 +35,9 @@
 
             admin.EmberGeneralas();
 
-
-            Console.WriteLine("A programban található emberek csak kitalációk, bármi egyezés a valósággal a véletlen műve.");
-            do
-            {
-                em.Kivalaszto();
-                cm.UgyHozzaadasa(admin, em);
-			} while (true);
+            Menu(em, cm, admin);
+            
+            
 			
         }
     }

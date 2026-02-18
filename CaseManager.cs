@@ -103,5 +103,26 @@ namespace digitalisnyomozoo
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
+
+        public void Kivalaszto(User felhasznalo, EvidenceManager em)
+        {
+            Console.WriteLine("Milyen műveletet szeretne végrehajtani?");
+            string valasztas = "";
+            do
+            {
+                Console.Write("Ügy hozzáadása (H) | Ügy törlése (T) | Ügyek listázása (L) | Vissza (V) | ");
+                valasztas = Console.ReadLine().ToUpper();
+            } while (valasztas != "H" && valasztas != "T" && valasztas != "L" && valasztas != "V");
+
+            switch (valasztas)
+            {
+                case "H": UgyHozzaadasa(felhasznalo, em); break;
+                case "T": UgyTorlese(); break;
+                case "L": UgyListazasa(); break;
+                default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
+            }
+
+
+        }
     }
 }
