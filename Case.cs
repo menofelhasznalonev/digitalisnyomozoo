@@ -42,5 +42,10 @@ namespace digitalisnyomozoo
 		public string Allapot { get => allapot; set => allapot = value; }
 		internal Person Szemely { get => szemely; set => szemely = value; }
 		internal Evidence Bizonyitek { get => bizonyitek; set => bizonyitek = value; }
-	}
+
+        public override string ToString()
+        {
+            return $"Ügy címe: {this.Cim} | Leírása: {this.leiras} | Állapota: {this.Allapot} | Hozzácsatolt ember(ek): {this.Szemely.Nev} | Hozzácsatolt bizonyíték(ok): {this.Bizonyitek.Tipus}({this.bizonyitek.MegbizhatosagiErtek}/10)";
+        }
+    }
 }
