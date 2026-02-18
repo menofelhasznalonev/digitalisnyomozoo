@@ -13,9 +13,12 @@ namespace digitalisnyomozoo
 		private int id;
 		private string szerepkor;
 
-		public List<Person> emberekLista = [];
+        Random r = new Random();
+        public List<Person> emberekLista = [];
+		public List<Suspect> gyanusitottakLista = [];
         private List<string> vNev = ["Nagy", "Kovács", "Tóth", "Szabó", "Horváth", "Varga", "Kiss", "Molnár", "Németh", "Balogh"];
         private List<string> kNev = ["Viktória", "Vivien", "Anna", "Alexandra", "Fanni", "Dániel", "Dávid", "Bence", "Máté", "Tamás"];
+
 
         public User(string nev, int id, string szerepkor)
 		{
@@ -36,7 +39,7 @@ namespace digitalisnyomozoo
 
         public void EmberGeneralas()
         {
-            Random r = new Random();
+            
 
             for (int i = 0; i < 10; i++)
             {
@@ -45,6 +48,14 @@ namespace digitalisnyomozoo
             }
 
         }
+
+		public void KezdoGyanusitas(Evidence bizonyitek)
+		{
+			List<Evidence> bizLista= [bizonyitek];
+			Suspect gyanusitott = new Suspect(emberekLista[r.Next(0, emberekLista.Count())], r.Next(0, 101), "Elbírálásra vár", bizLista);	
+		}
+
+
 
 		public void EmberListazas(List<Person> emberekLista)
 		{

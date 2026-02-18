@@ -32,8 +32,9 @@
             EvidenceManager em = new EvidenceManager();
             CaseManager cm = new CaseManager();
             User admin = new User("admin", 0, "admin");
-
+            em.KezdoBizonyitek();
             admin.EmberGeneralas();
+            admin.KezdoGyanusitas(em.Lista[0]);
 
             Menu(em, cm, admin);
             
