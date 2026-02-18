@@ -30,17 +30,15 @@ namespace digitalisnyomozoo
         internal List<Evidence> Lista { get => lista; set => lista = value; }
 
 
-        private void Feltoltes() 
-        { 
-            
 
-        }
+
         public void Listazas()
         {
             for (int i = 1; i <= Lista.Count; i++)
             {
                 Console.WriteLine();
                 Console.WriteLine($"{i}: {Lista[i - 1]}");
+
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }

@@ -12,7 +12,11 @@ namespace digitalisnyomozoo
 		private int id;
 		private string szerepkor;
 
-		public User(string nev, int id, string szerepkor)
+		public List<Person> emberekLista = [];
+        private List<string> vNev = ["Nagy", "Kovács", "Tóth", "Szabó", "Horváth", "Varga", "Kiss", "Molnár", "Németh", "Balogh"];
+        private List<string> kNev = ["Viktória", "Vivien", "Anna", "Alexandra", "Fanni", "Dániel", "Dávid", "Bence", "Máté", "Tamás"];
+
+        public User(string nev, int id, string szerepkor)
 		{
 			this.nev = nev;
 			this.id = id;
@@ -29,10 +33,16 @@ namespace digitalisnyomozoo
 		}
 		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
 
+        public void Feltoltes()
+        {
+            Random r = new Random();
 
-		public override string ToString()
-		{
-			return $"{this.Nev} {this.id} {this.szerepkor}";
-		}
-	}
+            for (int i = 0; i < 20; i++)
+            {
+                Person ember = new Person($"{vNev[r.Next(0, 10)]} {kNev[r.Next(0, 10)]}", r.Next(18, 81), "Még nincs megjegyzés");
+                emberekLista.Add(ember);
+            }
+
+        }
+    }
 }

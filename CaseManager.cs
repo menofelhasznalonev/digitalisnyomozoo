@@ -50,10 +50,10 @@ namespace digitalisnyomozoo
 
 
 
-            Case ugy = new Case(cim, leiras, allapot, bizonyitek, );
-            idSzamlalo++;
-            lista.Add(ugy);
-            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+            //Case ugy = new Case(cim, leiras, allapot, bizonyitek, );
+            //idSzamlalo++;
+            //lista.Add(ugy);
+            //Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
     }
 }
