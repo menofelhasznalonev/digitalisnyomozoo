@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace digitalisnyomozoo
 {
@@ -12,40 +13,40 @@ namespace digitalisnyomozoo
 		private string cim;
 		private string leiras;
 		private string allapot;
-		private Person szemely;
-		private Evidence bizonyitek;
+		private List<Person> szemely;
+		private List<Evidence> bizonyitek;
 
 
-		public Case(int id, string cim, string leiras, string allapot, Person szemely, Evidence bizonyitek)
-		{
-			this.id = id;
-			this.cim = cim;
-			this.leiras = leiras;
-			this.allapot = allapot;
-			this.szemely = szemely;
-			this.bizonyitek = bizonyitek;
-		}
+        public Case(int id, string cim, string leiras, string allapot, List<Person> szemely, List<Evidence> bizonyitek)
+        {
+            this.Id = id;
+            this.Cim = cim;
+            this.Leiras = leiras;
+            this.Allapot = allapot;
+            this.Szemely = szemely;
+            this.Bizonyitek = bizonyitek;
+        }
 
-		public int Id {
-			get 
-			{ 
-				return id;
-			}
-
-			set
-			{
-				this.id = value;
-			}
-		}
-		public string Cim { get => cim; set => cim = value; }
-		public string Leiras { get => leiras; set => leiras = value; }
-		public string Allapot { get => allapot; set => allapot = value; }
-		internal Person Szemely { get => szemely; set => szemely = value; }
-		internal Evidence Bizonyitek { get => bizonyitek; set => bizonyitek = value; }
+        public int Id { get => id; set => id = value; }
+        public string Cim { get => cim; set => cim = value; }
+        public string Leiras { get => leiras; set => leiras = value; }
+        public string Allapot { get => allapot; set => allapot = value; }
+        internal List<Person> Szemely { get => szemely; set => szemely = value; }
+        internal List<Evidence> Bizonyitek { get => bizonyitek; set => bizonyitek = value; }
 
         public override string ToString()
         {
-            return $"Ügy címe: {this.Cim} | Leírása: {this.leiras} | Állapota: {this.Allapot} | Hozzácsatolt ember(ek): {this.Szemely.Nev} | Hozzácsatolt bizonyíték(ok): {this.Bizonyitek.Tipus}({this.bizonyitek.MegbizhatosagiErtek}/10)";
+            string formazott = $"Ügy címe: {this.Cim} | Leírása: {this.Leiras} | Állapota: {this.Allapot} | Hozzácsatolt ember(ek): ";
+            foreach (Person item in Szemely) 
+            { 
+                formazott += (item.Nev + " ");
+            }
+            formazott += ("| Hozzácsatolt bizonyíték(ok): ");
+            foreach (Evidence item in Bizonyitek)
+            {
+                formazott += ($"{item.Tipus}({item.MegbizhatosagiErtek}/10) ");
+            }
+            return formazott;
         }
     }
 }

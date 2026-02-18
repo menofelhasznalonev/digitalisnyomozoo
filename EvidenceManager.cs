@@ -50,12 +50,12 @@ namespace digitalisnyomozoo
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
 
-        public void Listazas()
+        public void Listazas(List<Evidence> lista)
         {
-            for (int i = 1; i <= Lista.Count; i++)
+            for (int i = 1; i <= lista.Count; i++)
             {
                 Console.WriteLine();
-                Console.WriteLine($"{i}: {Lista[i - 1]}");
+                Console.WriteLine($"{i}: {lista[i - 1]}");
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
@@ -63,7 +63,7 @@ namespace digitalisnyomozoo
         public void BizonyitekTorlese()
 		{
 
-			Listazas();
+			Listazas(Lista);
             Console.Write("Hanyadik elemet szeretné törölni: ");
 			if (int.TryParse(Console.ReadLine(), out int hanyadik))
 			{
@@ -99,7 +99,7 @@ namespace digitalisnyomozoo
 			{
 				case "H": BizonyitekHozzaadasa();break;
                 case "T": BizonyitekTorlese();break;
-                case "L": Listazas();break;
+                case "L": Listazas(Lista);break;
 				default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
             }
 

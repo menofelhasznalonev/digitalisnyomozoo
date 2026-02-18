@@ -46,7 +46,7 @@ namespace digitalisnyomozoo
 
         }
 
-		public void EmberListazas()
+		public void EmberListazas(List<Person> emberekLista)
 		{
             for (int i = 1; i <= emberekLista.Count; i++)
             {

@@ -33,32 +33,69 @@ namespace digitalisnyomozoo
             string allapot = Console.ReadLine();
 
 
-            int hanyadik = 0;
-            bool mehet = false;
-            felhasznalo.EmberListazas();
+            string valasztas = "";
+            List<Person> ember = [];
             do
             {
-                Console.Write("Hanyadik embert csatolja az ügyhöz: ");
-                if (int.TryParse(Console.ReadLine(), out hanyadik))
+                int hanyadik = 0;
+                bool mehet = false;
+                valasztas = "N";
+                List<Person> emberValasztas = felhasznalo.emberekLista;
+                felhasznalo.EmberListazas(emberValasztas);
+                do
                 {
-                    mehet = true;
+                    Console.Write("Hanyadik embert csatolja az ügyhöz: ");
+                    if (int.TryParse(Console.ReadLine(), out hanyadik))
+                    {
+                        mehet = true;
+                    }
+                } while (!mehet || hanyadik <= 0 || hanyadik > felhasznalo.emberekLista.Count);
+                ember.Add(emberValasztas[hanyadik - 1]);
+                emberValasztas.RemoveAt(hanyadik - 1);
+
+                if (emberValasztas.Count > 0)
+                {
+                    Console.Write("Szeretne még hozzáadni embert? (I/N): ");
+                    do
+                    {
+                        valasztas = Console.ReadLine().ToUpper();
+                    } while (valasztas != "I" && valasztas != "N");
                 }
-            } while (!mehet || hanyadik <= 0 || hanyadik > felhasznalo.emberekLista.Count);
-            Person ember = felhasznalo.emberekLista[hanyadik-1];
+
+            } while (valasztas == "I");
 
 
-            hanyadik = 0;
-            mehet = false;
-            em.Listazas();
+
+
+            List<Evidence> bizonyitek = [];
             do
             {
-                Console.Write("Hanyadik bizonyítékot csatolja az ügyhöz: ");
-                if (int.TryParse(Console.ReadLine(), out hanyadik))
+                int hanyadik = 0;
+                bool mehet = false;
+                valasztas = "N";
+                List<Evidence> bizonyitekValasztas = em.Lista;
+                em.Listazas(bizonyitekValasztas);
+                do
                 {
-                    mehet = true;
+                    Console.Write("Hanyadik embert csatolja az ügyhöz: ");
+                    if (int.TryParse(Console.ReadLine(), out hanyadik))
+                    {
+                        mehet = true;
+                    }
+                } while (!mehet || hanyadik <= 0 || hanyadik > felhasznalo.emberekLista.Count);
+                bizonyitek.Add(bizonyitekValasztas[hanyadik - 1]);
+                bizonyitekValasztas.RemoveAt(hanyadik - 1);
+
+                if (bizonyitekValasztas.Count > 0)
+                {
+                    Console.Write("Szeretne még hozzáadni embert? (I/N): ");
+                    do
+                    {
+                        valasztas = Console.ReadLine().ToUpper();
+                    } while (valasztas != "I" && valasztas != "N");
                 }
-            } while (!mehet || hanyadik <= 0 || hanyadik > em.Lista.Count);
-            Evidence bizonyitek = em.Lista[hanyadik-1];
+
+            } while (valasztas == "I");
 
 
 
