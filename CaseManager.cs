@@ -20,7 +20,7 @@ namespace digitalisnyomozoo
 
 
         
-        public void UgyHozzaadasa(User felhasznalo, EvidenceManager em)
+        public void UgyHozzaadasa(DataStore felhasznalo, EvidenceManager em)
         {
 
             Console.Write("Ügy címe: ");
@@ -141,7 +141,7 @@ namespace digitalisnyomozoo
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
 
-        public void Kivalaszto(User felhasznalo, EvidenceManager em)
+        public void Kivalaszto(DataStore felhasznalo, EvidenceManager em)
         {
             Console.WriteLine("Milyen műveletet szeretne végrehajtani?");
             string valasztas = "";

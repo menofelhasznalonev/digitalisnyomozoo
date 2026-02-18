@@ -3,7 +3,7 @@
     internal class Program
     {
 
-        static void Menu(EvidenceManager em, CaseManager cm, DecisionEngine de, User felhasznalo)
+        static void Menu(EvidenceManager em, CaseManager cm, DecisionEngine de, DataStore ds, User felhasznalo)
         {
             Console.WriteLine("A programban található emberek csak kitalációk, bármi egyezés a valósággal a véletlen műve.");
             do
@@ -19,7 +19,7 @@
                 switch (valasztas)
                 {
                     case "B": em.Kivalaszto(); break;
-                    case "U": cm.Kivalaszto(felhasznalo, em); break;
+                    case "U": cm.Kivalaszto(ds, em); break;
                     case "G": de.GyanusitottsagModositas(); break;
 
                     default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
@@ -33,12 +33,13 @@
             EvidenceManager em = new EvidenceManager();
             CaseManager cm = new CaseManager();
             DecisionEngine de = new DecisionEngine();
+            DataStore ds = new DataStore();
             User admin = new User("admin", 0, "admin");
             em.KezdoBizonyitek();
-            admin.EmberGeneralas();
-            de.KezdoGyanusitas(em.Lista[0], admin.emberekLista);
+            ds.EmberGeneralas();
+            de.KezdoGyanusitas(em.Lista[0], ds.emberekLista);
 
-            Menu(em, cm, de, admin);
+            Menu(em, cm, de, ds, admin);
             
             
 			
