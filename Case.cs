@@ -39,7 +39,7 @@ namespace digitalisnyomozoo
             string formazott = $"Ügy címe: {this.Cim} | Leírása: {this.Leiras} | Állapota: {this.Allapot} | Hozzácsatolt ember(ek): ";
             foreach (Person item in Szemely) 
             { 
-                formazott += (item.Nev + " ");
+                formazott += (item.Nev + ", ");
             }
             formazott += ("| Hozzácsatolt bizonyíték(ok): ");
             foreach (Evidence item in Bizonyitek)

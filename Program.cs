@@ -5,26 +5,39 @@
 
         static void Menu(EvidenceManager em, CaseManager cm, DecisionEngine de, DataStore ds, User felhasznalo)
         {
+            bool megy = true;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("A programban található emberek csak kitalációk, bármi egyezés a valósággal a véletlen műve.");
+            Console.ResetColor();
             do
             {
+
                 Console.WriteLine("Milyen adatokat szeretne módosítani, törölni, vagy listázni?");
                 string valasztas = "";
                 do
                 {
-                    Console.Write("Bizonyítékok (B) | Ügyek (U) | Gyanusítottak (G) | Vissza (V) | ");
+                    Console.Write("Bizonyítékok (B) | Ügyek (U) | Gyanusítottak (G) | Kilépés (K): ");
                     valasztas = Console.ReadLine().ToUpper();
-                } while (valasztas != "B" && valasztas != "U" && valasztas != "G" && valasztas != "V");
+                } while (valasztas != "B" && valasztas != "U" && valasztas != "G" && valasztas != "K");
 
                 switch (valasztas)
                 {
-                    case "B": em.Kivalaszto(); break;
-                    case "U": cm.Kivalaszto(ds, em); break;
-                    case "G": de.GyanusitottsagModositas(); break;
+                    case "B": 
+                        Console.Clear();
+                        em.Kivalaszto(); break;
+                    case "U":
+                        Console.Clear();
+                        cm.Kivalaszto(ds, em); break;
+                    case "G":
+                        Console.Clear();
+                        de.GyanusitottsagModositas(); break;
+                    case "K":
+                        Console.Clear();
+                        megy = false; break;
 
-                    default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
+                    default: Console.Clear(); break;
                 }
-            } while (true);
+            } while (megy);
         }
 
         static void Main(string[] args)

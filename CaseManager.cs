@@ -22,7 +22,7 @@ namespace digitalisnyomozoo
         
         public void UgyHozzaadasa(DataStore felhasznalo, EvidenceManager em)
         {
-
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
             Console.Write("Ügy címe: ");
             string cim = Console.ReadLine();
 
@@ -32,7 +32,7 @@ namespace digitalisnyomozoo
             Console.Write("Ügy állapota: ");
             string allapot = Console.ReadLine();
 
-
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
             string valasztas = "";
             List<Person> ember = [];
             do
@@ -66,7 +66,7 @@ namespace digitalisnyomozoo
 
 
 
-
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
             List<Evidence> bizonyitek = [];
             do
             {
