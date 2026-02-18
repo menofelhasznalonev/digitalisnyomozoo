@@ -109,6 +109,7 @@ namespace digitalisnyomozoo
 		public void KezdoBizonyitek()
 		{
 			Evidence bizonyitek = new Evidence(0, "Ruhadarab", "Egy helyszínen talált kardigán, melyet vélhetően a gyanusított hagyott a helyszínen", 4);
+			lista.Add(bizonyitek);
 		}
 
 
