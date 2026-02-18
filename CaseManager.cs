@@ -67,5 +67,17 @@ namespace digitalisnyomozoo
             lista.Add(ugy);
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
+
+        public void UgyListazasa()
+        {
+            for (int i = 1; i <= lista.Count; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{i}: {lista[i - 1]}");
+            }
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
+
+
     }
 }
