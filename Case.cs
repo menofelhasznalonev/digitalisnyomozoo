@@ -44,7 +44,7 @@ namespace digitalisnyomozoo
             formazott += ("| Hozzácsatolt bizonyíték(ok): ");
             foreach (Evidence item in Bizonyitek)
             {
-                formazott += ($"{item.Tipus}({item.MegbizhatosagiErtek}/10) ");
+                formazott += ($"{item.Tipus}({item.MegbizhatosagiErtek}/5) ");
             }
             return formazott;
         }

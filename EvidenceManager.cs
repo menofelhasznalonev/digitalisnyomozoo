@@ -35,12 +35,12 @@ namespace digitalisnyomozoo
 
 			do
 			{
-				Console.Write("Mehbízhatósági érték (0-10): ");
+				Console.Write("Mehbízhatósági érték (1-5): ");
 				if (int.TryParse(Console.ReadLine(), out megbizhatosagiErtek))
 				{
 					mehet = true;
 				}
-			} while (!mehet || megbizhatosagiErtek < 0 || megbizhatosagiErtek >= 11);
+			} while (!mehet || megbizhatosagiErtek < 1 || megbizhatosagiErtek >= 6);
 			
 			
 
