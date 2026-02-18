@@ -38,6 +38,12 @@ namespace digitalisnyomozoo
 			{
 				formazott += item.Tipus;
 			}
+			if (this.gyanusitottsagiSzint >= 70)
+			{
+				Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Magas gyanusítottsági szint");
+				Console.ResetColor();
+			}
 			return formazott;
         }
 
