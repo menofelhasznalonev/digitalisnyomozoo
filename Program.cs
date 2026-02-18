@@ -12,14 +12,15 @@
                 string valasztas = "";
                 do
                 {
-                    Console.Write("Bizonyítékok (B) | Ügyek (U) | Vissza (V) | ");
+                    Console.Write("Bizonyítékok (B) | Ügyek (U) | Gyanusítottak (G) | Vissza (V) | ");
                     valasztas = Console.ReadLine().ToUpper();
-                } while (valasztas != "B" && valasztas != "U" && valasztas != "L" && valasztas != "V");
+                } while (valasztas != "B" && valasztas != "U" && valasztas != "G" && valasztas != "V");
 
                 switch (valasztas)
                 {
                     case "B": em.Kivalaszto(); break;
                     case "U": cm.Kivalaszto(felhasznalo, em); break;
+                    case "G": de.GyanusitottsagModositas(); break;
 
                     default: Console.WriteLine("----------------------------------------------------------------------------------------------------"); break;
                 }

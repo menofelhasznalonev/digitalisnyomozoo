@@ -31,7 +31,15 @@ namespace digitalisnyomozoo
 
 
 
-
+        public override string ToString()
+        {
+            string formazott = $"Név: {this.szemely.Nev} | Gyanusítottsági szint: {this.gyanusitottsagiSzint} | Státusz: {this.statusz} | Bizonyítéktípus(ok): ";
+			foreach (Evidence item in lista)
+			{
+				formazott += item.Tipus;
+			}
+			return formazott;
+        }
 
     }
 

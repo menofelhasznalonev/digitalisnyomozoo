@@ -39,7 +39,7 @@ namespace digitalisnyomozoo
                 }
             } while (!mehet || mennyi <= 0 || mennyi > 100);
 
-            gyanusitottLista[hanyadik].GyanusitottsagiSzint = mennyi;
+            gyanusitottLista[hanyadik-1].GyanusitottsagiSzint = mennyi;
 
         }
 
@@ -57,6 +57,8 @@ namespace digitalisnyomozoo
         {
             List<Evidence> bizLista = [bizonyitek];
             Suspect gyanusitott = new Suspect(emberekLista[r.Next(0, emberekLista.Count())], r.Next(0, 101), "Elbírálásra vár", bizLista);
+
+            gyanusitottLista.Add(gyanusitott);
         }
     }
 }
