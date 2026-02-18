@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,6 +79,29 @@ namespace digitalisnyomozoo
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
         }
 
+        public void UgyTorlese()
+        {
 
+            UgyListazasa();
+            Console.Write("Hanyadik elemet szeretné törölni: ");
+            if (int.TryParse(Console.ReadLine(), out int hanyadik))
+            {
+                if (hanyadik <= lista.Count && hanyadik > 0)
+                {
+                    Console.WriteLine($"{hanyadik}. elem törölve.");
+                    lista.RemoveAt(hanyadik - 1);
+                }
+                else
+                {
+                    Console.WriteLine("Nem létező adat");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Rossz adat megadva");
+            }
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        }
     }
 }
