@@ -49,11 +49,7 @@ namespace digitalisnyomozoo
 
         }
 
-		public void KezdoGyanusitas(Evidence bizonyitek)
-		{
-			List<Evidence> bizLista= [bizonyitek];
-			Suspect gyanusitott = new Suspect(emberekLista[r.Next(0, emberekLista.Count())], r.Next(0, 101), "Elbírálásra vár", bizLista);	
-		}
+
 
 
 
